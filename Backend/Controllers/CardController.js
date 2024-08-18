@@ -10,7 +10,10 @@ const createCard = async(req,res) => {
     } catch (error) {
         console.log(error)
     }
-    res.send({newCard})
+    if(newCard)
+        return res.send({msg:"Card Created Successfully " , newCard})
+    else 
+       return res.send({err:"Something went Wrong"})
 }
 
 const getCards = async(req,res) => {
@@ -20,7 +23,11 @@ const getCards = async(req,res) => {
     } catch (error) {
         console.log(error)
     }
-    res.send({cards})
+    if(cards)
+        return res.send({cards})
+    else 
+       return res.send({err:"Something went Wrong"})
+      
 }
 
 const getSingleCards = async(req,res) => {
@@ -31,7 +38,10 @@ const getSingleCards = async(req,res) => {
     } catch (error) {
         console.log(error)
     }
-    res.send({card})
+    if(card)
+        return res.send({card})
+    else 
+       return res.send({err:"Something went Wrong"})
 }
 exports.createCard = createCard;
 exports.getCards = getCards;
