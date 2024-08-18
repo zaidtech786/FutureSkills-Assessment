@@ -1,0 +1,256 @@
+/* Base Styles */
+nav {
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+  padding: 0 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border-radius: 5px;
+  color: #fff;
+  border: 1px solid #fff;
+  outline: none;
+  cursor: pointer;
+}
+.container {
+  width: 100%;
+  height: 40vh;
+  background-color: #CCCCFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.childCont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 2%;
+}
+#input {
+  width: 100%;
+  padding: 0.5rem;
+}
+.searchIcon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 8px;
+  margin-right: 8px;
+}
+.cardContainer {
+  width: 100%;
+  padding: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.card {
+  width: 45%;
+  height: 120px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}
+.title {
+  padding: 10px 20px;
+  padding-bottom: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+.desc {
+  padding: 5px 20px 25px 20px;
+}
+/* marginTop: "0.5rem", position: "relative",width:"30%"} */
+.inputContainerr{
+  margin-top: 0.5rem;
+  position: relative;
+  width: 30%;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: slide-down 0.3s ease-out;
+}
+.open-modal-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.open-modal-btn:hover {
+  background-color: #0056b3;
+}
+@keyframes slide-down {
+  from {
+      transform: translateY(-200px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.close-btn:hover,
+.close-btn:focus {
+  color: #000;
+}
+.modal-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.modal-form .form-group {
+  margin-bottom: 15px;
+}
+.modal-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.modal-form input[type="text"],
+.modal-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.modal-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+.submit-btn {
+  width: 100%;
+  background-color: #007BFF;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+#description {
+  resize: none;
+}
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+.text{
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .inputContainerr{
+    width: 100%;
+  }
+  .container {
+      height: 50vh;
+      padding: 0 5%;
+  }
+  .card {
+      width: 48%;
+      margin-bottom: 1rem;
+  }
+  .text{
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+      padding: 0 5%;
+  }
+  .container {
+      height: 60vh;
+      padding: 0 5%;
+  }
+  .childCont {
+      padding: 0 5%;
+  }
+  .card {
+      width: 100%;
+  }
+  .cardContainer {
+      padding: 2rem;
+  }
+  .text{
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .text{
+    font-size: 0.5rem;
+  }
+  nav {
+      flex-direction: column;
+      height: auto;
+      padding: 1rem 5%;
+  }
+  .btn {
+      margin-top: 1rem;
+  }
+  .container {
+      height: auto;
+      padding: 2rem 5%;
+  }
+  .childCont {
+      padding: 0;
+  }
+  .searchIcon {
+      margin-top: 5px;
+      margin-right: 5px;
+  }
+  .cardContainer {
+      padding: 1rem;
+  }
+  .modal-content {
+      margin: 30% auto;
+  }
+}
